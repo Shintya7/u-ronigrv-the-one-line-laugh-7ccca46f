@@ -26,6 +26,10 @@ function validateLine(line: string): void {
     throw new Error("Line must not contain control characters.");
   }
 
+  if (!/[A-Za-z]/.test(line)) {
+    throw new Error("Line must contain letters.");
+  }
+
   if (line.trim().length === 0) {
     throw new Error("Line must not be only whitespace.");
   }
